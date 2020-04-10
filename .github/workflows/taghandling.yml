@@ -1,4 +1,4 @@
-name: TagAction
+name: Greetings
 
 on: 
   push:
@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  checkRemoteRepo:
+  greeting:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/first-interaction@v1
