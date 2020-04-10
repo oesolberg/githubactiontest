@@ -19,7 +19,7 @@ jobs:
       run: |
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/hspluginversions
           rm target
-          copy source\SharedAssemblyInfo.cs target\RfLinkSeer\SharedAssemblyInfo.cs
+          copy source/haredAssemblyInfo.cs target/RfLinkSeer/SharedAssemblyInfo.cs
           git add target
           git commit -m "Automatic publish from github.com/prject"
           git push target master
