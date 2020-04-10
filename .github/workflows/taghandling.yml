@@ -1,4 +1,4 @@
-name: Greetings
+name: PushVersionChanges
 
 on: 
   push:
@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  greeting:
+  pushversionchange:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/first-interaction@v1
@@ -17,9 +17,9 @@ jobs:
     
     - name: Copy SharedAssembly
       run: |
-          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/hspluginversions
-          rm RfLinkSeer/SharedAssemblyInfo.cs
-          copy source/SharedAssemblyInfo.cs RfLinkSeer/SharedAssemblyInfo.cs
+          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/hspluginversions target
+          #rm target
+          #copy source/SharedAssemblyInfo.cs RfLinkSeer/SharedAssemblyInfo.cs
           git add RfLinkSeer/SharedAssemblyInfo.cs
           git commit -m "Automatic publish from githubactiontest"
           git push RfLinkSeer/SharedAssemblyInfo.cs master
