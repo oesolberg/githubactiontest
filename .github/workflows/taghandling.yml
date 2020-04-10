@@ -18,9 +18,10 @@ jobs:
     - name: Copy SharedAssembly
       run: |
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/hspluginversions.git 
-          cd hspluginversions          
-          #rm target
-          #copy source/SharedAssemblyInfo.cs RfLinkSeer/SharedAssemblyInfo.cs
-          git add target/RfLinkSeer/SharedAssemblyInfo.cs
+          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/githubactiontest.git 
+          cd hspluginversions
+          rm RfLinkSeer/SharedAssemblyInfo.cs          
+          copy ../githubactiontest/SharedAssemblyInfo.cs SharedAssemblyInfo.cs
+          git add .
           git commit -m "Automatic publish from githubactiontest"
           git push RfLinkSeer/SharedAssemblyInfo.cs master
