@@ -29,10 +29,12 @@ jobs:
           
           #git remote add origin git@github.com:oesolberg/hspluginversions.git
           git remote add origin https://oesolberg:${{secrets.version_access}}@github.com/oesolberg/hspluginversions.git 
+          
           rm RfLinkSeer/SharedAssemblyInfo.cs          
           cp ../githubactiontest/SharedAssemblyInfo.cs SharedAssemblyInfo.cs
           git add .
           echo 'Doing a commit'          
           git commit -m "Automatic publish from githubactiontest"
           echo 'Doing a push'
+          git push --set-upstream origin master
           git push
