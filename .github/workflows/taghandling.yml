@@ -1,4 +1,4 @@
-name: hstest
+name: TagAction
 
 on: 
   push:
@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  hstest:
+  checkRemoteRepo:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/first-interaction@v1
