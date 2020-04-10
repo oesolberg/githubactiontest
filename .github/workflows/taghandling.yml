@@ -34,7 +34,7 @@ jobs:
           
           cd RfLinkSeer
           rm -f SharedAssemblyInfo.cs          
-          cp ../githubactiontest/SharedAssemblyInfo.cs SharedAssemblyInfo.cs
+          cp ../../githubactiontest/SharedAssemblyInfo.cs SharedAssemblyInfo.cs
           git add .
           echo 'Doing a commit'          
           git commit -m "Automatic publish from githubactiontest"
