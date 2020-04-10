@@ -17,7 +17,7 @@ jobs:
     
     - name: Copy SharedAssembly
       run: |
-          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/project target
+          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/hspluginversions
           rm target
           copy source\SharedAssemblyInfo.cs target\RfLinkSeer\SharedAssemblyInfo.cs
           git add target
