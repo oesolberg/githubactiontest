@@ -19,6 +19,8 @@ jobs:
       run: |
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/hspluginversions.git 
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/oesolberg/githubactiontest.git 
+          git config --global user.email "githubaction@github.com"
+          git config --global user.name "Github Action"
           cd hspluginversions
           rm RfLinkSeer/SharedAssemblyInfo.cs          
           cp ../githubactiontest/SharedAssemblyInfo.cs SharedAssemblyInfo.cs
